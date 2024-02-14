@@ -15,43 +15,116 @@ let producto = Number(prompt("---Productos---\n  1. Producto A = $270 \n  2. Pro
 
 switch (producto) {
     case 1:
-        let monedas = 0;
-        let activador = 0;
-        let Isactivesecond = " ";
-        while (activador = 0){
-            let valormonedas = Number(prompt(" Ingrese una moneda (solo de $100-$50-$10)"))
-            if (valormonedas === 100 || valormonedas === 50 ||valormonedas === 10 ) {
-                monedas += valormonedas
+        let monedasA = 0;
+        let activadorA = true;
+        let IsactivesecondA = true;
+        while (activadorA === true ){
+            let valormonedasA = Number(prompt(" Ingrese una moneda (solo de $100-$50-$10)"))
+            if (valormonedasA === 100 || valormonedasA === 50 ||valormonedasA === 10 ) {
+                monedasA += valormonedasA
             }else{
                 alert("solo de $100-$50-$10")
             }
-            Isactivesecond = String(prompt("¿Desea ingresar otra moneda? S(si)//N(no)"));
-            if (Isactivesecond = "n" && monedas < A){
-               activador = 1;
-            }else{
-                alert(`Hacen falta ${A - monedas} monedas para comprar el producto`)
+            IsactivesecondA = confirm("¿Desea ingresar otra moneda?");
+            if (IsactivesecondA === false ){
+                if (monedasA < A){
+                    alert(`Hacen falta ${A - monedasA} monedas para comprar el producto`)
+                }else{
+                    activadorA = false;
+                }
             }
-            console.log(monedas)
+            console.log(monedasA)
         }
-        
-        let vuelto = monedas - A;
-
-        while (vuelto > 0) {
-            confirm(`Sus vueltos son de ${vuelto}`)
-            if (vuelto < 100){
-
-                console.log(vuelto)
+        let vueltoA = monedasA - A;
+        while (vueltoA > 0) {
+            confirm(`Sus vueltos son de ${vueltoA}`)
+            if (vueltoA > 100){
+                vueltoA -= 100
+                console.log(`Moneda de vuelto : $100\nHacen falta ${vueltoA}`)
+            }else if (vueltoA > 50 && vueltoA < 100){
+                vueltoA -= 50
+                console.log(`Moneda de vuelto : $50\nHacen falta ${vueltoA}`)
+            }else if(vueltoA >=10 && vueltoA <50){
+                vueltoA -= 10
+                console.log(`Moneda de vuelto : $10\nHacen falta ${vueltoA}`)
             }
-            
-
         }
+        alert(`Gracias por su compra`)
         break;
     case 2:
-        vuelto = vuelto + 50
+        let monedasB = 0;
+        let activadorB = true;
+        let IsactivesecondB = true;
+        while (activadorB === true ){
+            let valormonedasB = Number(prompt(" Ingrese una moneda (solo de $100-$50-$10)"))
+            if (valormonedasB === 100 || valormonedasB === 50 ||valormonedasB === 10 ) {
+                monedasB += valormonedasB
+            }else{
+                alert("solo de $100-$50-$10")
+            }
+            IsactivesecondB = confirm("¿Desea ingresar otra moneda?");
+            if (IsactivesecondB === false ){
+                if (monedasB < B){
+                    alert(`Hacen falta ${B - monedasB} monedas para comprar el producto`)
+                }else{
+                    activadorB = false;
+                }
+            }
+            console.log(monedasB)
+        }
+        let vueltoB = monedasB - B;
+        while (vueltoB > 0) {
+            confirm(`Sus vueltos son de ${vueltoB}`)
+            if (vueltoB > 100){
+                vueltoB -= 100
+                console.log(`Moneda de vuelto : $100\nHacen falta ${vueltoB}`)
+            }else if (vueltoB > 50 && vueltoB < 100){
+                vueltoB -= 50
+                console.log(`Moneda de vuelto : $50\nHacen falta ${vueltoB}`)
+            }else if(vueltoB >=10 && vueltoB <50){
+                vueltoB -= 10
+                console.log(`Moneda de vuelto : $10\nHacen falta ${vueltoB}`)
+            }
+        }
+        alert(`Gracias por su compra`)
         break;
     case 3:
-        vuelto = vuelto + 100
-        break;
+        let monedasC = 0;
+        let activadorC = true;
+        let IsactivesecondC = true;
+        while (activadorC === true ){
+            let valormonedasC = Number(prompt(" Ingrese una moneda (solo de $100-$50-$10)"))
+            if (valormonedasC === 100 || valormonedasC === 50 ||valormonedasC === 10 ) {
+                monedasC += valormonedasC
+            }else{
+                alert("solo de $100-$50-$10")
+            }
+            IsactivesecondC = confirm("¿Desea ingresar otra moneda?");
+            if (IsactivesecondC === false ){
+                if (monedasC < C){
+                    alert(`Hacen falta ${C - monedasB} monedas para comprar el producto`)
+                }else{
+                    activadorC = false;
+                }
+            }
+            console.log(monedasC)
+        }
+        let vueltoC = monedasC - C;
+        while (vueltoC > 0) {
+            confirm(`Sus vueltos son de ${vueltoC}`)
+            if (vueltoC > 100){
+                vueltoC -= 100
+                console.log(`Moneda de vuelto : $100\nHacen falta ${vueltoC}`)
+            }else if (vueltoC > 50 && vueltoC < 100){
+                vueltoC -= 50
+                console.log(`Moneda de vuelto : $50\nHacen falta ${vueltoC}`)
+            }else if(vueltoC >=10 && vueltoC <50){
+                vueltoC -= 10
+                console.log(`Moneda de vuelto : $10\nHacen falta ${vueltoC}`)
+            }
+        }
+        alert(`Gracias por su compra`)
+        break;  
     default:
         alert("No existe el producto")
 }
